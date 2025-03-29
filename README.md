@@ -53,25 +53,25 @@ Birkaç dakika sonra ışık sabit koyu mavi yandığında, LAN kablosunu sarı 
 Putty uygulaması veya farklı bir uçbirim kullanarak **`Telnet port 23`** modunda **`192.168.123.1`** adresine bağlanın.  
 Telnet için girmeniz gereken kullanıcı bilgileri: Kullanıcı adı: **`root`** - Şifre: **`nbg7815@2019`**  
 
-- ### 🪄 Kuruluma Hazırlık
-> - Telnet arayüzüne eriştikten sonra öncelikle cihazın bazı ayarlarını düzenlememiz gerekiyor.  
-> - Uçbirim üzerinde düzenleyeceğimiz ilk ayarların kodları şu şekildedir:  
+# 🪄 Kuruluma Hazırlık
+Telnet arayüzüne eriştikten sonra öncelikle cihazın bazı ayarlarını düzenlememiz gerekiyor.  
+Uçbirim üzerinde düzenleyeceğimiz ilk ayarların kodları şu şekildedir:  
     **`uci set dropbear.setting.enable=1`**  
     **`uci commit dropbear`**  
     **`uci set network.general.auto_ip_change=0`**  
     **`uci commit network`**  
-> - Ardından **`vi /etc/init.d/preboot`** komutuyla **`preboot`** dosyasından **`dropbear`** bölümünü kapatacağız.  
-> - Komutu girdikten sonra düzenleme moduna girmek için klavyenizden ℹ️ harfine basın.
-> - Kodlarda **`dropbear`** satırından **`fi`** satırına kadar tüm satırların başına **`#`** ekleyiniz.
-> - Düzenleme sonrası **`dropbear`** bölümü bu şekilde görünmelidir.  
+Ardından **`vi /etc/init.d/preboot`** komutuyla **`preboot`** dosyasından **`dropbear`** bölümünü kapatacağız.  
+Komutu girdikten sonra düzenleme moduna girmek için klavyenizden ℹ️ harfine basın.
+Kodlarda **`dropbear`** satırından **`fi`** satırına kadar tüm satırların başına **`#`** ekleyiniz.
+Düzenleme sonrası **`dropbear`** bölümü bu şekilde görünmelidir.  
     **`#dropbear`**  
     **`#ck_dropbear=$(uci get dropbear.setting.enable)`**  
     **`#if [ "$ck_dropbear" != "0" ]; then`**  
     **`#    uci set dropbear.setting.enable=0`**  
     **`#    uci commit dropbear`**  
     **`#fi`**  
-> - Dosyayı kaydedip kapatmak için **`ESC`** tuşuna bastıktan sonra **`:wq`** yazarak dosyadan çıkış yapın.  
-> - Cihazın fişini söküp ardından geri takarak yeniden başlatın.  
+Dosyayı kaydedip kapatmak için **`ESC`** tuşuna bastıktan sonra **`:wq`** yazarak dosyadan çıkış yapın.  
+Cihazın fişini söküp ardından geri takarak yeniden başlatın.  
 
 # 🚀 OpenWRT Kurulumu - <a href="https://github.com/frudotz/openwrt-zyxel-nbg7815/releases/tag/NBG7815" target="_blank">İndir</a>
 [Releases](https://github.com/frudotz/openwrt-zyxel-nbg7815/releases/tag/NBG7815) kısmında paylaştığımız dosyalar arasında yer alan **`ApplicationData`** klasörü içindeki **`flash_to_openwrt.sh`** ve  
