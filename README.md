@@ -104,6 +104,7 @@ Bu değişikliği yapmak için herhangi bir uçbirim ile SSH üzerinden cihaza b
 > **`tar -C /overlay -cvf - . | tar -C /mnt -xf -`**  
 > **`umount /mnt`**  
 > **`reboot`**  
+
 Bu komutları girdikten sonra cihaz yeniden başlayacak ve kullanılabilir hafıza alanınız 2 GB'ın üstünde olacaktır.
 
 # 🗃️ Kaynaklar
