@@ -27,10 +27,10 @@ Kurulumu gerçekleştirebilirsiniz. Yöntem, cihaz sürümü fark etmeksizin NBG
       <a href="#-merhaba-openwrt">😎 Merhaba OpenWRT!</a>
     </li>
     <li>
-      <a href="#%EF%B8%8F-kaynaklar">🗃️ Kaynaklar</a>
+      <a href="#-kurulum-sonrası">💾 Kurulum Sonrası</a>
     </li>
     <li>
-      <a href="-kurulum-sonrası">💾 Kurulum Sonrası</a>
+      <a href="#%EF%B8%8F-kaynaklar">🗃️ Kaynaklar</a>
     </li>
   </ol>
 </details>
