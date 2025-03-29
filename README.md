@@ -88,6 +88,24 @@ Son olarak **`./flash_to_openwrt.sh`** komutu ile kurulum scriptini çalıştır
 Kurulumda bir hata yapmadıysanız birkaç dakika içinde cihaz OpenWRT üzerinden başlar ve internete erişebilirsiniz.  
 Tebrikler! Artık doğruca [192.168.1.1](http://192.168.1.1/) adresine giderek OpenWRT'ye merhaba diyebilirsiniz! \*alkış efekti\*  
 
+# 💾 Kurulum Sonrası
+Arayüzde gezinirken veya paketler kurarken cihaz hafızasının fazlasıyla küçük bir alana sahip olduğunu göreceksiniz.  
+Bunun sebebi cihazda iki ayrı hafıza alanı bulunmasıdır, çözümüyse kullanılacak alanı büyük olan ile değiştirmektir.  
+Bu değişikliği yapmak için herhangi bir uçbirim ile SSH üzerinden cihaza bağlanıp şu komutları sırayla girmenizdir:  
+> **`DEVICE="/dev/mmcblk0p11"`**  
+> **`mkfs.ext4 -L extroot ${DEVICE}`**  
+> **`mount ${DEVICE} /mnt`**  
+> **`rm -f /mnt/.extroot-uuid /mnt/etc/.extroot-uuid`**  
+> **`uci -q delete fstab.overlay`**  
+> **`uci set fstab.overlay="mount"`**  
+> **`uci set fstab.overlay.device="${DEVICE}"`**  
+> **`uci set fstab.overlay.target="/overlay"`**  
+> **`uci commit fstab`**  
+> **`tar -C /overlay -cvf - . | tar -C /mnt -xf -`**  
+> **`umount /mnt`**  
+> **`reboot`**  
+Bu komutları girdikten sonra cihaz yeniden başlayacak ve kullanılabilir hafıza alanınız 2 GB'ın üstünde olacaktır.
+
 # 🗃️ Kaynaklar
   - [OpenWRT Wiki](https://openwrt.org/toh/zyxel/nbg7815_armor_g5)  
   - [Zyxel NBG7815 (Armor G5) Openwrt Kurma Rehberi @altuntepe2 - DH Forum](https://forum.donanimhaber.com/zyxel-nbg7815-armor-g5-openwrt-kurma-rehberi--155271460)  
