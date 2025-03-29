@@ -29,6 +29,9 @@ Kurulumu gerçekleştirebilirsiniz. Yöntem, cihaz sürümü fark etmeksizin NBG
     <li>
       <a href="#%EF%B8%8F-kaynaklar">🗃️ Kaynaklar</a>
     </li>
+    <li>
+      <a href="-kurulum-sonrası">💾 Kurulum Sonrası</a>
+    </li>
   </ol>
 </details>
 
@@ -44,7 +47,7 @@ Kurulumu gerçekleştirebilirsiniz. Yöntem, cihaz sürümü fark etmeksizin NBG
 - Ethernet: Qualcomm QCA8075 (4x1G) + Qualcomm QCA8081 (1x2.5G) + Aquantia AQR113C (1x10G)
 
 # ✨ Başlarken
-Öncelikle Putty gibi Telnet üzerinden erişim imkanı bulunan bir uçbirim ve Python3'ü bilgisayarınıza indirin.  
+Öncelikle [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) gibi Telnet üzerinden erişim imkanı bulunan bir uçbirim ve [Python3](https://www.python.org/downloads/)'ü bilgisayarınıza indirin.  
 Cihazın tüm ethernet bağlantılarını kesin. Reset butonuna led ışık turuncu renkte yanıp sönene kadar basılı tutun.  
 Birkaç dakika sonra ışık sabit koyu mavi yandığında, LAN kablosunu sarı portlardan birine takarak PC'ye bağlayın.  
 Putty uygulaması veya farklı bir uçbirim kullanarak **`Telnet port 23`** modunda **`192.168.123.1`** adresine bağlanın.  
