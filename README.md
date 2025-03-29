@@ -71,12 +71,12 @@ Telnet için girmeniz gereken kullanıcı bilgileri: Kullanıcı adı: **`root`*
 > - Cihazın fişini söküp ardından geri takarak yeniden başlatın.  
 
 # 🚀 OpenWRT Kurulumu - <a href="https://github.com/frudotz/" target="_blank">İndir</a>
-Releases kısmında paylaştığımız dosyalar arasında yer alan **`tmp`** klasörü içinde yer alan **`flash_to_openwrt.sh`** ve  
+Releases kısmında paylaştığımız dosyalar arasında yer alan **`ApplicationData`** klasörü içindeki **`flash_to_openwrt.sh`** ve  
 OpenWRT imaj dosyasını bir dizine kopyalayın ve klasör içinde **`Shift + Sağ Tık`** yaparak bir uçbirim çalıştırın.  
 Uçbirimde **`python3 -m http.server`** komutunu kullanarak dizinde bir Python yerel sunucusu başlatın.  
 
 Ardından Telnet üzerinden cihaza tekrar erişerek aşağıdaki komutları girin.  
-> **`cd /tmp`**  
+> **`cd /tmp/ApplicationData`**  
 > **`wget http://<Bilgisayarın_Lokal_IPsi>:8000/flash_to_openwrt.sh`**  
 > **`wget http://<Bilgisayarın_Lokal_IPsi>:8000/openwrt-ipq807x-generic-zyxel_nbg7815-squashfs-sysupgrade.bin`**  
 > **`chmod -R 0777 flash_to_openwrt.sh`**  
