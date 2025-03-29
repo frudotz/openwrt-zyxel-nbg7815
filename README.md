@@ -56,20 +56,22 @@ Telnet için girmeniz gereken kullanıcı bilgileri: Kullanıcı adı: **`root`*
 # 🪄 Kuruluma Hazırlık
 Telnet arayüzüne eriştikten sonra öncelikle cihazın bazı ayarlarını düzenlememiz gerekiyor.  
 Uçbirim üzerinde düzenleyeceğimiz ilk ayarların kodları şu şekildedir:  
->    **`uci set dropbear.setting.enable=1`**  
->    **`uci commit dropbear`**  
->    **`uci set network.general.auto_ip_change=0`**  
->    **`uci commit network`**  
+> **`uci set dropbear.setting.enable=1`**  
+> **`uci commit dropbear`**  
+> **`uci set network.general.auto_ip_change=0`**  
+> **`uci commit network`**
+
 Ardından **`vi /etc/init.d/preboot`** komutuyla **`preboot`** dosyasından **`dropbear`** bölümünü kapatacağız.  
 Komutu girdikten sonra düzenleme moduna girmek için klavyenizden ℹ️ harfine basın.
 Kodlarda **`dropbear`** satırından **`fi`** satırına kadar tüm satırların başına **`#`** ekleyiniz.
 Düzenleme sonrası **`dropbear`** bölümü bu şekilde görünmelidir.  
->    **`#dropbear`**  
->    **`#ck_dropbear=$(uci get dropbear.setting.enable)`**  
->    **`#if [ "$ck_dropbear" != "0" ]; then`**  
->    **`#    uci set dropbear.setting.enable=0`**  
->    **`#    uci commit dropbear`**  
->    **`#fi`**  
+> **`#dropbear`**  
+> **`#ck_dropbear=$(uci get dropbear.setting.enable)`**  
+> **`#if [ "$ck_dropbear" != "0" ]; then`**  
+> **`#    uci set dropbear.setting.enable=0`**  
+> **`#    uci commit dropbear`**  
+> **`#fi`**
+
 Dosyayı kaydedip kapatmak için **`ESC`** tuşuna bastıktan sonra **`:wq`** yazarak dosyadan çıkış yapın.  
 Cihazın fişini söküp ardından geri takarak yeniden başlatın.  
 
