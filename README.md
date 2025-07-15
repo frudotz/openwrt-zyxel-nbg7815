@@ -30,6 +30,9 @@ Kurulumu gerçekleştirebilirsiniz. Yöntem, cihaz sürümü fark etmeksizin NBG
       <a href="#-kurulum-sonrası">💾 Kurulum Sonrası</a>
     </li>
     <li>
+      <a href="#-katkıda-bulun--bağış">🤝 Katkıda Bulun / Bağış</a>
+    </li>
+    <li>
       <a href="#%EF%B8%8F-kaynaklar">🗃️ Kaynaklar</a>
     </li>
   </ol>
@@ -111,6 +114,10 @@ Bu değişikliği yapmak için herhangi bir uçbirim ile SSH üzerinden cihaza b
 > **`reboot`**  
 
 Bu komutları girdikten sonra cihaz yeniden başlayacak ve kullanılabilir hafıza alanınız 2 GB'ın üstünde olacaktır.
+
+# 🤝 Katkıda Bulun / Bağış
+  - Yanlış gördüğünüz veya eklemek istediğiniz şeyleri PR/Issue açarak iletebilirsiniz.  
+  - Rehberimizi faydalı bulduysanız [🍻 bir bira ısmarlayarak](https://coff.ee/frudotz) bana destek olabilirsiniz.
 
 # 🗃️ Kaynaklar
   - [OpenWRT Wiki](https://openwrt.org/toh/zyxel/nbg7815_armor_g5)  
