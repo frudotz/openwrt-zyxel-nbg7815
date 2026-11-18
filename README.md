@@ -99,21 +99,10 @@ Tebrikler! Artık doğruca [192.168.1.1](http://192.168.1.1/) adresine giderek O
 # 💾 Kurulum Sonrası
 Arayüzde gezinirken veya paketler kurarken cihaz hafızasının fazlasıyla küçük bir alana sahip olduğunu göreceksiniz.  
 Bunun sebebi cihazda iki ayrı hafıza alanı bulunmasıdır, çözümüyse kullanılacak alanı büyük olan ile değiştirmektir.  
-Bu değişikliği yapmak için herhangi bir uçbirim ile SSH üzerinden cihaza bağlanıp şu komutları sırayla girmenizdir:  
-> **`DEVICE="/dev/mmcblk0p11"`**  
-> **`mkfs.ext4 -L extroot ${DEVICE}`**  
-> **`mount ${DEVICE} /mnt`**  
-> **`rm -f /mnt/.extroot-uuid /mnt/etc/.extroot-uuid`**  
-> **`uci -q delete fstab.overlay`**  
-> **`uci set fstab.overlay="mount"`**  
-> **`uci set fstab.overlay.device="${DEVICE}"`**  
-> **`uci set fstab.overlay.target="/overlay"`**  
-> **`uci commit fstab`**  
-> **`tar -C /overlay -cvf - . | tar -C /mnt -xf -`**  
-> **`umount /mnt`**  
-> **`reboot`**  
+Bu işlemi güvenli şekilde ve sorun çıkması halinde otomatik geri dönüşle yapabilmeniz için ayrı bir rehber hazırladık:  
+👉 **[Zyxel Armor G5 için Türkçe OpenWRT Extroot Rehberi](https://github.com/frudotz/openwrt-nbg7815-extroot)**
 
-Bu komutları girdikten sonra cihaz yeniden başlayacak ve kullanılabilir hafıza alanınız 2 GB'ın üstünde olacaktır.
+*Bu rehberin önceki sürümündeki komutlarla extroot yaptıysanız ve Wi-Fi'ye bağlanan cihazlar IP alamıyorsa, yeni rehberdeki Sorun Giderme bölümüne göz atın.*
 
 # 🤝 Katkıda Bulun / Bağış
   - Yanlış gördüğünüz veya eklemek istediğiniz şeyleri PR/Issue açarak iletebilirsiniz.  
